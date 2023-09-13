@@ -84,6 +84,11 @@
   font-size: 12px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
+.githubLink {
+  font-size: 10px;
+  text-align: right;
+  margin: 10px;
+}
 
 #city_search {
   width: 60%;
