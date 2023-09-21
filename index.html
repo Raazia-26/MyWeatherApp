@@ -15,97 +15,100 @@
 
 
 
+  <div class="weather-app-wrapper">
+    <div class="wrapper">
 
-  <div class="wrapper">
-    <div class="container">
-      <div>
-        <form id="search_form">
-          <input type="text" placeholder="Enter name of city..." autocomplete="off" autofocus="on" id="city_search" />
-          <input type="submit" value="Search" />
-          <span class="currentLocation" id="currentLoc">
-            <button>Current Location</button>
-          </span>
+      <div class="container">
+        <div>
+          <form id="search_form">
+            <input type="text" placeholder="Enter name of city..." autocomplete="off" autofocus="on" id="city_search" />
+            <input type="submit" value="Search" />
+            <span class="currentLocation" id="currentLoc">
+              <button>Current Location</button>
+            </span>
 
-        </form>
-      </div>
+          </form>
+        </div>
 
-      <div class="row">
-        <div class="col-md-6">
-          <div class="box">
-            <img class="current_temp_icon" src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-              alt="sunny">
-            <span class="current_temp" id="temp_now">24</span>
-            <div class="degree">
-              <span class="celcius" id="degree_c">°C </span>|<span class="farenheit" id="degree_f"> °F</span>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="box">
+              <img class="current_temp_icon" src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                alt="sunny">
+              <span class="current_temp" id="temp_now">24</span>
+              <div class="degree">
+                <span class="celcius" id="degree_c">°C </span>|<span class="farenheit" id="degree_f"> °F</span>
+              </div>
+
             </div>
-
+            <ul class="day_feelslike">
+              <li>Precipitation: 0%</li>
+              <li>Humidity: 51%</li>
+              <li>Wind: 14km/h</li>
+            </ul>
           </div>
-          <ul class="day_feelslike">
-            <li>Precipitation: 0%</li>
-            <li>Humidity: 51%</li>
-            <li>Wind: 14km/h</li>
-          </ul>
-        </div>
 
-        <div class="col-md-6">
-          <ul>
-            <li class="current_city" id="city_name">Vienna</li>
-            <li class="now"><span id="current_date">Wednesday 20 14.43</li>
-            <li class="now"><span id="current_date">Sunny</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-
-
-    <div class="container text-center">
-      <div class="row align-items-start">
-        <div class="col">
-          <img class="sunnywithclouds" src="Images/sunnywithclouds.png" alt="sunny with clouds">
-
-          <p class="future_prediction">Fri <br />
-            35°</p>
-        </div>
-        <div class="col">
-          <img class="sunnywithclouds" src="Images/sunnywithclouds.png" alt="heavy rain">
-          <p class="future_prediction">Sat <br />
-            31°</p>
-        </div>
-        <div class="col">
-          <img class="sunnywithclouds" src="Images/sunnywithclouds.png" alt="heavy rain">
-          <p class="future_prediction">Sun <br />
-            32°</p>
-        </div>
-        <div class="col">
-          <img class="heavyrain_icon" src="Images/heavy-rain.png" alt=" light rain">
-          <p class="future_prediction">Mon <br />
-            25°</p>
-        </div>
-        <div class="col">
-          <img class="lightrain_icon" src="Images/light-rain.png" alt="light rain">
-          <p class="future_prediction">Tue <br />
-            21°</p>
-        </div>
-        <div class="col">
-          <img class="heavyrain_icon" src="Images/heavy-rain.png" alt="heavy rain">
-          <p class="future_prediction">Wed <br />
-            22°</p>
-        </div>
-        <div class="col">
-          <img class="sunnywithclouds" src="Images/sunnywithclouds.png" alt="cloudy">
-          <p class="future_prediction">Thurs <br />
-            24°
-          </p>
+          <div class="col-md-6">
+            <ul>
+              <li class="current_city" id="city_name">Vienna</li>
+              <li class="now"><span id="current_date">Wednesday 20 14.43</li>
+              <li class="now"><span id="current_date">Sunny</li>
+            </ul>
+          </div>
         </div>
       </div>
 
-    </div>
-  </div>
-  </div>
 
-  <p class="githubLink"><a href="https://github.com/Raazia-26/MyWeatherApp" target="_blank"> GitHub Repository </a>
-    by Raazia</p>
+
+      <div class="container text-center">
+        <div class="row align-items-start">
+          <div class="col">
+            <img class="sunnywithclouds" src="Images/sunnywithclouds.png" alt="sunny with clouds">
+
+            <p class="future_prediction">Fri <br />
+              35°</p>
+          </div>
+          <div class="col">
+            <img class="sunnywithclouds" src="Images/sunnywithclouds.png" alt="heavy rain">
+            <p class="future_prediction">Sat <br />
+              31°</p>
+          </div>
+          <div class="col">
+            <img class="sunnywithclouds" src="Images/sunnywithclouds.png" alt="heavy rain">
+            <p class="future_prediction">Sun <br />
+              32°</p>
+          </div>
+          <div class="col">
+            <img class="heavyrain_icon" src="Images/heavy-rain.png" alt=" light rain">
+            <p class="future_prediction">Mon <br />
+              25°</p>
+          </div>
+          <div class="col">
+            <img class="lightrain_icon" src="Images/light-rain.png" alt="light rain">
+            <p class="future_prediction">Tue <br />
+              21°</p>
+          </div>
+          <div class="col">
+            <img class="heavyrain_icon" src="Images/heavy-rain.png" alt="heavy rain">
+            <p class="future_prediction">Wed <br />
+              22°</p>
+          </div>
+          <div class="col">
+            <img class="sunnywithclouds" src="Images/sunnywithclouds.png" alt="cloudy">
+            <p class="future_prediction">Thurs <br />
+              24°
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+    <p class="githubLink"><a href="https://github.com/Raazia-26/MyWeatherApp" target="_blank"> GitHub Repository </a>
+      by Raazia</p>
+
+  </div>
 
   <script src="src/index.js"></script>
 </body>
