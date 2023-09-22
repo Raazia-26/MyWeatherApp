@@ -24,6 +24,13 @@ function showTemp(response) {
   console.log(cityTemp);
   let degreeC = document.querySelector("#temp_now");
   degreeC.innerHTML = `${cityTemp}`;
+  let humidityElem = document.querySelector("#humidity");
+  humidityElem.innerHTML = `humidity: ${response.data.main.humidity}%`;
+  let windElem = document.querySelector("#wind");
+  console.log(response.data);
+  windElem.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
+  let weatherConditionElem = document.querySelector("#weatherCondition");
+  weatherConditionElem.innerHTML = response.data.weather[0].description;
 }
 
 //change current city

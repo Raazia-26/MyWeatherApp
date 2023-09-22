@@ -57,6 +57,7 @@
 .current_city {
   font-size: 45px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  text-transform: capitalize;
 }
 .degree {
   display: inline;
@@ -81,17 +82,17 @@ ul {
   padding: 0;
 }
 .day_feelslike {
-  margin-top: -18px;
+  margin-top: -12px;
   color: #596e79d8;
   font-size: 12px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 .now {
-  font-size: 15px;
   color: #596e79d8;
+  font-size: 13px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-  margin-top: -5px;
-  padding: 3px;
+  text-transform: capitalize;
+  margin-top: -2px;
 }
 
 .preci_wind {
