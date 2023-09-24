@@ -1,23 +1,5 @@
 let apiKey = "58a6775f97527351bf6c6966e209be39";
 //display current date time
-let now = new Date();
-
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let today = days[now.getDay()];
-let hours = now.getHours();
-let mins = now.getMinutes();
-let time = `${hours}:${mins}`;
-
-let current_time = document.querySelector("#current_date");
-current_time.innerHTML = `${today} ${time}`;
 
 function showTemp(response) {
   let cityTemp = Math.round(response.data.main.temp);
@@ -25,12 +7,43 @@ function showTemp(response) {
   let degreeC = document.querySelector("#temp_now");
   degreeC.innerHTML = `${cityTemp}`;
   let humidityElem = document.querySelector("#humidity");
-  humidityElem.innerHTML = `humidity: ${response.data.main.humidity}%`;
+  humidityElem.innerHTML = `Humidity: ${response.data.main.humidity}%`;
   let windElem = document.querySelector("#wind");
   console.log(response.data);
   windElem.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
   let weatherConditionElem = document.querySelector("#weatherCondition");
   weatherConditionElem.innerHTML = response.data.weather[0].description;
+
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  let current_time = document.querySelector("#current_date");
+  current_time.innerHTML = formatDate(response.data.dt * 1000);
+}
+
+function formatDate(timestamp) {
+  let now = new Date();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let today = days[now.getDay()];
+  let hours = now.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let mins = now.getMinutes();
+  if (mins < 10) {
+    mins = `0${mins}`;
+  }
+  return `Last Updated: ${today} ${hours}:${mins}`;
 }
 
 //change current city
