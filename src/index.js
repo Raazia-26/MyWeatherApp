@@ -4,7 +4,9 @@ let apiKey = "58a6775f97527351bf6c6966e209be39";
 function showTemp(response) {
   let cityElement = document.querySelector("#city_name");
   cityElement.innerHTML = response.data.name;
-  let celciusTemp = Math.round(response.data.main.temp);
+  celciusTemp = Math.round(response.data.main.temp);
+  let current_temp = document.querySelector("#temp_now");
+  current_temp.innerHTML = celciusTemp;
   console.log(celciusTemp);
 
   let humidityElem = document.querySelector("#humidity");
