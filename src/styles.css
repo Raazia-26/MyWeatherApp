@@ -102,9 +102,14 @@ ul {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
-.future_prediction {
+.future_prediction,
+.forecast_temp {
   font-size: 12px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+.min_temp {
+  opacity: 0.5;
 }
 
 #city_search {
