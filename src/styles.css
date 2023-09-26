@@ -66,16 +66,15 @@
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
-.sunny,
-.current_temp,
-.celcius,
-.farenheit {
+.active {
   display: inline;
+  cursor: default;
+  color: #596e79d8;
+  text-decoration: none;
 }
 .celcius:hover,
 .farenheit:hover {
-  color: #596e79d8;
-  cursor: pointer;
+  text-decoration: none;
 }
 ul {
   list-style: none;
@@ -100,7 +99,6 @@ ul {
   text-align: left;
   margin-top: -21px;
   margin-bottom: 40px;
-
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 

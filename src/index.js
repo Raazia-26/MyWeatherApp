@@ -4,10 +4,8 @@ let apiKey = "58a6775f97527351bf6c6966e209be39";
 function showTemp(response) {
   let cityElement = document.querySelector("#city_name");
   cityElement.innerHTML = response.data.name;
-  let cityTemp = Math.round(response.data.main.temp);
-  console.log(cityTemp);
-  let degreeC = document.querySelector("#temp_now");
-  degreeC.innerHTML = `${cityTemp}`;
+  let celciusTemp = Math.round(response.data.main.temp);
+  console.log(celciusTemp);
 
   let humidityElem = document.querySelector("#humidity");
   humidityElem.innerHTML = `Humidity: ${response.data.main.humidity}%`;
@@ -66,19 +64,24 @@ function changeCityName(event) {
 let search_city = document.querySelector("#search_form");
 search_city.addEventListener("submit", changeCityName);
 
-//farenheit and celcius tempertaure change
+function displayFahrenheitTemp(event) {
+  event.preventDefault();
 
-/*function tempF() {
-  let C = degreeC;
-  let F = Math.round((C * 9) / 5 + 32);
-  let degreeF = document.querySelector("#temp_now");
-  degreeF.innerHTML = `${F}°`;
+  celciusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let degree_F = document.querySelector("#temp_now");
+  let farhenheit = (celciusTemp * 9) / 5 + 32;
+  degree_F.innerHTML = Math.round(farhenheit);
 }
 
-let farenheit = document.querySelector("#degree_f");
-farenheit.addEventListener("click", tempF);
+function displayCelciusTemp(event) {
+  event.preventDefault();
+  celciusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let degree_C = document.querySelector("#temp_now");
+  degree_C.innerHTML = Math.round(celciusTemp);
+}
 
-*/
 function currentPosition(position) {
   let lat = position.coords.latitude;
   let long = position.coords.longitude;
@@ -101,5 +104,13 @@ function currPosition() {
 
 let button = document.querySelector("#currentLoc");
 button.addEventListener("click", currPosition);
+
+let celciusTemp = null;
+
+let fahrenheitLink = document.querySelector("#farenheit_link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
+
+let celciusLink = document.querySelector("#celcius_Link");
+celciusLink.addEventListener("click", displayCelciusTemp);
 
 search("Vienna");
