@@ -102,9 +102,10 @@ ul {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
-.future_prediction,
+.weather_forecast,
 .forecast_temp {
   font-size: 12px;
+  text-align: center;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 

@@ -1,6 +1,27 @@
 let apiKey = "58a6775f97527351bf6c6966e209be39";
 //display current date time
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastDay = ["Thurs", "Fri", "Sat", "Sun", "Mon"];
+  let forecastHTML = `<div class="row">`;
+
+  forecastDay.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+            <img class="sunnywithclouds" src="Images/sunnywithclouds.png" alt="sunny with clouds">
+            <div class="future_prediction">${day}</div>
+            <div class="forecast_temp">
+              <span class="max_temp">36°</span> <span class="min_temp">32°</span>
+            </div>
+          </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastElement);
+}
 function showTemp(response) {
   let cityElement = document.querySelector("#city_name");
   cityElement.innerHTML = response.data.name;
@@ -8,7 +29,7 @@ function showTemp(response) {
   let current_temp = document.querySelector("#temp_now");
   current_temp.innerHTML = celciusTemp;
   console.log(celciusTemp);
-
+  displayForecast();
   let humidityElem = document.querySelector("#humidity");
   humidityElem.innerHTML = `Humidity: ${response.data.main.humidity}%`;
 
