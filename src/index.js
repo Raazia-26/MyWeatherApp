@@ -1,7 +1,8 @@
 let apiKey = "58a6775f97527351bf6c6966e209be39";
 //display current date time
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let forecastDay = ["Thurs", "Fri", "Sat", "Sun", "Mon"];
   let forecastHTML = `<div class="row">`;
@@ -20,7 +21,13 @@ function displayForecast() {
 
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
-  console.log(forecastElement);
+}
+
+function getForecast(coordinates) {
+  let api_key = `0f8bc384a7c31b717a18cfe38a95ae06`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude={current,minutely,hourly,alerts}&appid=${api_key}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
 }
 function showTemp(response) {
   let cityElement = document.querySelector("#city_name");
@@ -28,8 +35,7 @@ function showTemp(response) {
   celciusTemp = Math.round(response.data.main.temp);
   let current_temp = document.querySelector("#temp_now");
   current_temp.innerHTML = celciusTemp;
-  console.log(celciusTemp);
-  displayForecast();
+
   let humidityElem = document.querySelector("#humidity");
   humidityElem.innerHTML = `Humidity: ${response.data.main.humidity}%`;
 
@@ -47,6 +53,8 @@ function showTemp(response) {
   );
   let current_time = document.querySelector("#current_date");
   current_time.innerHTML = formatDate(response.data.dt * 1000);
+
+  getForecast(response.data.coord);
 }
 
 function formatDate(timestamp) {
