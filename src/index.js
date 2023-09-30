@@ -40,7 +40,7 @@ function displayForecast(response) {
 function getForecast(coordinates) {
   let api_key = `0f8bc384a7c31b717a18cfe38a95ae06`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&exclude={current,minutely,hourly,alerts}&appid=${api_key}&units=metric`;
-  console.log(apiUrl);
+
   axios.get(apiUrl).then(displayForecast);
 }
 function showTemp(response) {
@@ -48,24 +48,20 @@ function showTemp(response) {
   cityElement.innerHTML = response.data.name;
   celciusTemp = Math.round(response.data.main.temp);
   let current_temp = document.querySelector("#temp_now");
-  current_temp.innerHTML = celciusTemp;
-
   let humidityElem = document.querySelector("#humidity");
-  humidityElem.innerHTML = `Humidity: ${response.data.main.humidity}%`;
-
   let windElem = document.querySelector("#wind");
-  console.log(response.data);
-  windElem.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
-
   let weatherConditionElem = document.querySelector("#weatherCondition");
-  weatherConditionElem.innerHTML = response.data.weather[0].description;
-
   let iconElement = document.querySelector("#icon");
+  let current_time = document.querySelector("#current_date");
+
+  current_temp.innerHTML = celciusTemp;
+  humidityElem.innerHTML = `Humidity: ${response.data.main.humidity}%`;
+  windElem.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
+  weatherConditionElem.innerHTML = response.data.weather[0].description;
   iconElement.setAttribute(
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-  let current_time = document.querySelector("#current_date");
   current_time.innerHTML = formatDate(response.data.dt * 1000);
 
   getForecast(response.data.coord);
@@ -113,14 +109,12 @@ search_city.addEventListener("submit", changeCityName);
 function currentPosition(position) {
   let lat = position.coords.latitude;
   let long = position.coords.longitude;
-  console.log(lat);
-  console.log(long);
   let apiUrl2 = `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${long}&limit=1&appid=${apiKey}`;
   axios.get(apiUrl2).then(showCurrentLocation);
 }
 function showCurrentLocation(response) {
   let cityName = response.data[0].name;
-  console.log(cityName);
+
   let currentGeolocation = document.querySelector("#city_name");
   currentGeolocation.innerHTML = response.data[0].name;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
