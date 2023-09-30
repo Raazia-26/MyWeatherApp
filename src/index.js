@@ -84,6 +84,7 @@ function formatDate(timestamp) {
   ];
   let today = days[now.getDay()];
   let hours = now.getHours();
+
   if (hours < 10) {
     hours = `0${hours}`;
   }

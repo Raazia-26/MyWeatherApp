@@ -17,6 +17,8 @@
 }
 .wrapper {
   border: #a5abafd8 0.3px solid;
+  background: linear-gradient(-225deg, #b7f8db 0%, #50a7c2 100%);
+
   max-width: 600px;
   margin: 5px auto;
   padding: 15px;
@@ -34,7 +36,7 @@
 }
 button {
   border: #a5abafd8 0.3px solid;
-  background-color: rgb(118, 116, 221);
+  background-color: #233142;
   border-radius: 4px;
   color: white;
   height: 30px;
