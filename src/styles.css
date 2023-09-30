@@ -32,11 +32,12 @@
   background-color: white;
   width: 80px;
 }
-.currentLocation {
+button {
   border: #a5abafd8 0.3px solid;
-  background-color: white;
+  background-color: rgb(118, 116, 221);
   border-radius: 4px;
-  width: 80px;
+  color: white;
+  height: 30px;
 }
 .current_temp_icon {
   display: inline-block;
@@ -44,12 +45,7 @@
   margin-top: 0px;
   width: 60px;
 }
-.sunnywithclouds,
-.heavyrain_icon,
-.lightrain_icon,
-.cloudy_icon {
-  width: 45px;
-}
+
 .current_temp {
   font-size: 45px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
@@ -117,6 +113,6 @@ ul {
   width: 60%;
   border: #a5abafd8 1px solid;
   border-radius: 4px;
-  height: 40px;
+  height: 31px;
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
