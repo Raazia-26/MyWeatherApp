@@ -62,16 +62,6 @@ button {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
-.active {
-  display: inline;
-  cursor: default;
-  color: #596e79d8;
-  text-decoration: none;
-}
-.celcius:hover,
-.farenheit:hover {
-  text-decoration: none;
-}
 ul {
   list-style: none;
   padding: 0;

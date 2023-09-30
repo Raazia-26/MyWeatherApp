@@ -109,24 +109,6 @@ function changeCityName(event) {
 let search_city = document.querySelector("#search_form");
 search_city.addEventListener("submit", changeCityName);
 
-function displayFahrenheitTemp(event) {
-  event.preventDefault();
-
-  celciusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let degree_F = document.querySelector("#temp_now");
-  let farhenheit = (celciusTemp * 9) / 5 + 32;
-  degree_F.innerHTML = Math.round(farhenheit);
-}
-
-function displayCelciusTemp(event) {
-  event.preventDefault();
-  celciusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  let degree_C = document.querySelector("#temp_now");
-  degree_C.innerHTML = Math.round(celciusTemp);
-}
-
 function currentPosition(position) {
   let lat = position.coords.latitude;
   let long = position.coords.longitude;
@@ -149,13 +131,5 @@ function currPosition() {
 
 let button = document.querySelector("#currentLoc");
 button.addEventListener("click", currPosition);
-
-let celciusTemp = null;
-
-let fahrenheitLink = document.querySelector("#farenheit_link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
-
-let celciusLink = document.querySelector("#celcius_Link");
-celciusLink.addEventListener("click", displayCelciusTemp);
 
 search("Vienna");
