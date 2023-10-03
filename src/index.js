@@ -113,9 +113,17 @@ search_city.addEventListener("submit", changeCityName);
 function currentPosition(position) {
   let lat = position.coords.latitude;
   let long = position.coords.longitude;
-  let apiUrl2 = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&limit=1&appid=${apiKey}&units=metric`;
+  let apiUrl2 = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&limit=1&appid=${apiKey}&units=metric`;
   axios.get(apiUrl2).then(showTemp);
 }
+/*function showCurrentLocation(response) {
+  let cityName = response.data[0].name;
+
+  let currentGeolocation = document.querySelector("#city_name");
+  currentGeolocation.innerHTML = response.data[0].name;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showTemp);
+}*/
 
 function currPosition() {
   navigator.geolocation.getCurrentPosition(currentPosition);
