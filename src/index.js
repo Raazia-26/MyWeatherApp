@@ -47,6 +47,7 @@ function showTemp(response) {
   let cityElement = document.querySelector("#city_name");
   cityElement.innerHTML = response.data.name;
   celciusTemp = Math.round(response.data.main.temp);
+
   let current_temp = document.querySelector("#temp_now");
   let humidityElem = document.querySelector("#humidity");
   let windElem = document.querySelector("#wind");
@@ -91,6 +92,9 @@ function formatDate(timestamp) {
   return `Last Updated: ${today} ${hours}:${mins}`;
 }
 function search(city) {
+  if (!city) {
+    return;
+  }
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showTemp);
 }
@@ -109,22 +113,14 @@ search_city.addEventListener("submit", changeCityName);
 function currentPosition(position) {
   let lat = position.coords.latitude;
   let long = position.coords.longitude;
-  let apiUrl2 = `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${long}&limit=1&appid=${apiKey}`;
-  axios.get(apiUrl2).then(showCurrentLocation);
+  let apiUrl2 = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&limit=1&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl2).then(showTemp);
 }
-function showCurrentLocation(response) {
-  let cityName = response.data[0].name;
 
-  let currentGeolocation = document.querySelector("#city_name");
-  currentGeolocation.innerHTML = response.data[0].name;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(showTemp);
-}
 function currPosition() {
   navigator.geolocation.getCurrentPosition(currentPosition);
 }
 
 let button = document.querySelector("#currentLoc");
 button.addEventListener("click", currPosition);
-
-search("Vienna");
+search("Lahore");
